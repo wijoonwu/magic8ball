@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>매직 8볼</title>
     <style>
+      @keyframes gradient {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
       body {
         font-family: "Arial", sans-serif;
         display: flex;
@@ -13,7 +25,9 @@
         justify-content: center;
         height: 100vh;
         margin: 0;
-        background: linear-gradient(to bottom right, #2193b0, #6dd5ed);
+        background: linear-gradient(270deg, #ff00cc, #3333ff, #ff9900, #33cc33);
+        background-size: 800% 800%;
+        animation: gradient 15s ease infinite;
         color: #fff;
         text-align: center;
       }
@@ -113,8 +127,7 @@
           return;
         }
         const 대답 = 응답들[Math.floor(Math.random() * 응답들.length)];
-        document.getElementById("result").innerText =
-          "매직 8볼의 대답: " + 대답;
+        document.getElementById("result").innerText = "[매직 8볼 🎱] \n" + 대답;
       }
     </script>
   </body>
