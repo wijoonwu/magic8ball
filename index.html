@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>매직 8볼</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        background: linear-gradient(to bottom right, #2193b0, #6dd5ed);
+        color: #fff;
+        text-align: center;
+      }
+      h1 {
+        font-size: 3em;
+        margin-bottom: 20px;
+      }
+      #question {
+        padding: 10px;
+        font-size: 1em;
+        border: none;
+        border-radius: 5px;
+        width: 300px;
+        margin-bottom: 10px;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 1em;
+        color: #fff;
+        background-color: #333;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      button:hover {
+        background-color: #555;
+      }
+      #result {
+        margin-top: 20px;
+        font-size: 1.5em;
+        color: #fff;
+      }
+      input:focus,
+      button:focus {
+        outline: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>매직 8볼에게 물어보세요</h1>
+    <input type="text" id="question" placeholder="질문을 입력하세요" />
+    <button onclick="매직8볼()">질문하기</button>
+    <div id="result"></div>
+
+    <script>
+      function 매직8볼() {
+        const 응답들 = [
+          "확실합니다.",
+          "결정적으로 그렇습니다.",
+          "의심할 여지없이 그렇습니다.",
+          "분명히 그렇습니다.",
+          "믿어도 좋습니다.",
+          "내가 보기엔 그렇습니다.",
+          "아마도 그렇습니다.",
+          "전망이 좋습니다.",
+          "네.",
+          "긍정적인 신호입니다.",
+          "흐릿하게 보입니다. 다시 시도하세요.",
+          "나중에 다시 물어보세요.",
+          "지금은 말하지 않는 것이 좋습니다.",
+          "지금은 예측할 수 없습니다.",
+          "집중하고 다시 물어보세요.",
+          "기대하지 마세요.",
+          "내 대답은 '아니요'입니다.",
+          "내 소식통에 따르면 '아니요'입니다.",
+          "전망이 좋지 않습니다.",
+          "매우 의심스럽습니다.",
+          "상당히 그렇습니다.",
+          "오늘은 그런 날입니다.",
+          "지금은 확실하지 않습니다.",
+          "당신의 직감을 믿으세요.",
+          "다시 한 번 물어보세요.",
+          "곧 알게 될 것입니다.",
+          "긍정적인 결과가 예상됩니다.",
+          "전혀 그렇지 않습니다.",
+          "현재로서는 그렇습니다.",
+          "질문을 다시 생각해보세요.",
+          "예스입니다.",
+          "아니오입니다.",
+          "조금 더 기다려보세요.",
+          "자신감을 가지세요.",
+          "오늘은 피곤해 보이네요.",
+          "곧 알 수 있을 것입니다.",
+          "믿을 만한 정보가 아닙니다.",
+          "상황이 좋지 않습니다.",
+        ];
+
+        const 질문 = document.getElementById("question").value;
+        if (질문.trim() === "") {
+          alert("질문을 입력하세요.");
+          return;
+        }
+        const 대답 = 응답들[Math.floor(Math.random() * 응답들.length)];
+        document.getElementById("result").innerText =
+          "매직 8볼의 대답: " + 대답;
+      }
+    </script>
+  </body>
+</html>
