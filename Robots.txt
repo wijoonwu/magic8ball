@@ -1,0 +1,5 @@
+# robots.txt
+User-agent: *
+Allow: /
+
+Sitemap: https://magic8ball1.netlify.app/sitemap.xml
